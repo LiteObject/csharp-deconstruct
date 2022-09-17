@@ -3,7 +3,7 @@
 
 Let's learn more about this process by looking at the following code examples.
 
-## Example: Deconstruct a tuple
+## Example: Deconstruction of a tuple object 
 
 ```csharp
 // declare a tuple
@@ -19,7 +19,7 @@ Console.WriteLine($"Price: {price}");
 
 ```
 
-## Example: Deconstruct a dictionary
+## Example: Deconstruction of a dictionary object
 
 ```csharp
 // declare a dictionary object
@@ -34,7 +34,7 @@ foreach((string k, string v) in books)
     Console.WriteLine($"\"{k}\" written by {v}");
 }
 ```
-## Example: Deconstruct a class
+## Example: Deconstruction of a class
 We need to implement the `Deconstruct` method. We can have multiple implementation of this method by overloading.
 
 ```csharp
@@ -82,7 +82,7 @@ var (myBookTitle, myBookAuthor) = mybook;
 Console.WriteLine($"\"{myBookTitle}\" by {myBookAuthor}");
 ```
 
-## Example: Deconstruct a record
+## Example: Deconstruction of a record
 
 ```csharp
 // define a record called "Person" with the props
@@ -94,6 +94,24 @@ var person = new Person("Jon", "Doe");
 var (firstName, lastName) = person;
 Console.WriteLine($"My name is {firstName} {lastName}");
 ```
+
+## Example: Deconstruction using extension method 
+
+```csharp
+// implemeted an extension method
+public static void Deconstruct(this DateTimeOffset date, out int day, out int month, out int year) =>
+            (day, month, year) = (date.Day, date.Month, date.Year);
+```
+
+```csharp
+ // now instantitate DateTimeOffset
+var date = new DateTimeOffset(2022, 9, 17, 0, 0, 0, 0, TimeSpan.Zero);
+
+// deconstruct DateTimeOffset objcet
+(int day, int month, int year) = date; 
+Console.WriteLine($"I wrote this example on: {month}/{day}/{year}");
+```
+
 ---
 ## Links:
 - [Deconstructing tuples and other types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)

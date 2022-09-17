@@ -60,8 +60,23 @@
 
             // instantitate a Person record
             var person = new Person("Jon", "Doe");
+
+            // deconstruct person record
             var (firstName, lastName) = person;
             Console.WriteLine($"My name is {firstName} {lastName}");
+
+
+            /******************************************* 
+            * Example: Deconstruction using extension method 
+            *******************************************/
+
+            // implemeted an extension method in "Extensions.cs" file
+            // now instantitate DateTimeOffset
+            var date = new DateTimeOffset(2022, 9, 17, 0, 0, 0, 0, TimeSpan.Zero);
+
+            // deconstruct DateTimeOffset objcet
+            (int day, int month, int year) = date; 
+            Console.WriteLine($"I wrote this example on: {month}/{day}/{year}");
         }
     }
 }
