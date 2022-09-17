@@ -3,7 +3,7 @@
 
 Let's learn more about this process by looking at the following code examples.
 
-## Example: Deconstruct tuple
+## Example: Deconstruct a tuple
 
 ```csharp
 // declare a tuple
@@ -19,7 +19,7 @@ Console.WriteLine($"Price: {price}");
 
 ```
 
-## Example: Deconstruct dictionary
+## Example: Deconstruct a dictionary
 
 ```csharp
 // declare a dictionary object
@@ -34,7 +34,7 @@ foreach((string k, string v) in books)
     Console.WriteLine($"\"{k}\" written by {v}");
 }
 ```
-## Example: Deconstruct class
+## Example: Deconstruct a class
 We need to implement the `Deconstruct` method. We can have multiple implementation of this method by overloading.
 
 ```csharp
@@ -82,6 +82,19 @@ var (myBookTitle, myBookAuthor) = mybook;
 Console.WriteLine($"\"{myBookTitle}\" by {myBookAuthor}");
 ```
 
+## Example: Deconstruct a record
+
+```csharp
+// define a record called "Person" with the props
+public record Person(string FirstName, string LastName);
+```
+```csharp
+// instantitate a Person record
+var person = new Person("Jon", "Doe");
+var (firstName, lastName) = person;
+Console.WriteLine($"My name is {firstName} {lastName}");
+```
 ---
 ## Links:
 - [Deconstructing tuples and other types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
+- [More on C# Record Types](https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/records)
