@@ -1,7 +1,7 @@
-# csharp-deconstruct
-Example of deconstructing operation - unpacking variables from types - in C#
-
+# Deconstruction in C#: Unpacking variables from types 
 >Deconstructing is unpacking types into single pieces; for instance, a tuple into its items or a class into its properties.
+
+Let's learn more about this process by looking at the following code examples.
 
 ## Example: Deconstruct tuple
 
@@ -81,3 +81,7 @@ var (myBookTitle, myBookAuthor) = mybook;
 // use the variables as needed
 Console.WriteLine($"\"{myBookTitle}\" by {myBookAuthor}");
 ```
+
+---
+## Links:
+- [Deconstructing tuples and other types](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/functional/deconstruct)
